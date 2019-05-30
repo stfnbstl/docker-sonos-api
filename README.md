@@ -12,7 +12,7 @@ $ docker volume create sonos-api_presets
 
 # run the container
 $ docker run -d --name sonos-api \
-  --mount=sonos-api_presets,target=/nodes/node-sonos-http-api/presets \
+  -v sonos-api_presets:/nodes/node-sonos-http-api/presets \
   --network host \
   --restart always \
   stfnbstl/sonos-api:latest
